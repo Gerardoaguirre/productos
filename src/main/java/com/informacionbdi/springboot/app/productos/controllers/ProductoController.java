@@ -39,6 +39,13 @@ public class ProductoController {
 		Producto producto = productoService.findById(id);
 		//producto.setPort(Integer.parseInt(env.getProperty("local.server.port")));
 		producto.setPort(port);
+	
+		boolean ok=false; //esto para simular un erro u poner en practica histryx implementado en servicio item que es quien consume este micro
+		if(!ok) {
+			throw new RuntimeException("No se pudo cargar el producto");
+		}
+		
+
 		return producto;
 	}
 
